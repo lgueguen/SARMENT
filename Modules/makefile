@@ -52,10 +52,10 @@ MATRICEO = matrice.o Fmatrice.o random.o
 #   cibles
 #######################
 
-all: _Csequencemodule.so _Fsequencemodule.so _Cmatricemodule.so \
-	_Fmatricemodule.so _Clexiquemodule.so _Cpartitionmodule.so \
-	_part_equmodule.so _parti_compmodule.so _Cparti_simpmodule.so \
-        _Cdesc_compmodule.so
+all: _Csequence.so _Fsequence.so _Cmatrice.so \
+	_Fmatrice.so _Clexique.so _Cpartition.so \
+	_part_equ.so _parti_comp.so _Cparti_simp.so \
+        _Cdesc_comp.so
 
 .PHONY: all
 
@@ -67,36 +67,36 @@ all: _Csequencemodule.so _Fsequencemodule.so _Cmatricemodule.so \
 %_wrap.o: %_wrap.cxx 
 	$(MAKE) -C $(SRCDIR) $(@F)
 
-%.o:	%.cpp
+%.o: %.cpp
 	$(MAKE) -C $(SRCDIR) $(@F)
 
-_Cdesc_compmodule.so: $(addprefix $(SRCDIR)/, $(ELO)  desc_comp_wrap.o)
+_Cdesc_comp.so: $(addprefix $(SRCDIR)/, $(ELO)  desc_comp_wrap.o)
 	$(faitmodule)
 
-_Csequencemodule.so: $(addprefix $(SRCDIR)/, $(SEQUENCEO) sequence_wrap.o)
+_Csequence.so: $(addprefix $(SRCDIR)/, $(SEQUENCEO) sequence_wrap.o)
 	$(faitmodule)
 
-_Fsequencemodule.so: $(addprefix $(SRCDIR)/, Fsequence.o Fsequence_wrap.o random.o)
+_Fsequence.so: $(addprefix $(SRCDIR)/, Fsequence.o Fsequence_wrap.o random.o)
 	$(faitmodule)
 
-_Cmatricemodule.so: $(addprefix $(SRCDIR)/, $(MATRICEO) matrice_wrap.o lexique.o $(ELO))
+_Cmatrice.so: $(addprefix $(SRCDIR)/, $(MATRICEO) matrice_wrap.o lexique.o $(ELO))
 	$(faitmodule)
 
-_Fmatricemodule.so: $(addprefix $(SRCDIR)/, Fmatrice_wrap.o Fmatrice.o descripteur.o random.o)
+_Fmatrice.so: $(addprefix $(SRCDIR)/, Fmatrice_wrap.o Fmatrice.o descripteur.o random.o)
 	$(faitmodule)
 
-_Clexiquemodule.so: $(addprefix $(SRCDIR)/, lexique_wrap.o lexique.o  $(MATRICEO) $(SEQUENCEO) $(ELO))
+_Clexique.so: $(addprefix $(SRCDIR)/, lexique_wrap.o lexique.o  $(MATRICEO) $(SEQUENCEO) $(ELO))
 	$(faitmodule)
 
-_Cpartitionmodule.so: $(addprefix $(SRCDIR)/, partition.o partition_wrap.o segment.o $(ELO) part_equ_iter.o)
+_Cpartition.so: $(addprefix $(SRCDIR)/, partition.o partition_wrap.o segment.o $(ELO) part_equ_iter.o)
 	$(faitmodule)
 
-_part_equmodule.so: $(addprefix $(SRCDIR)/, part_equ.o part_equ_wrap.o posopere.o part_equ_iter.o segment.o $(ELO))
+_part_equ.so: $(addprefix $(SRCDIR)/, part_equ.o part_equ_wrap.o posopere.o part_equ_iter.o segment.o $(ELO))
 	$(faitmodule)
 
-_parti_compmodule.so: $(addprefix $(SRCDIR)/, parti_comp.o parti_comp_wrap.o Arret.o part_equ.o lexique.o segment.o $(MATRICEO) $(ELO) posopere.o part_equ_iter.o)
+_parti_comp.so: $(addprefix $(SRCDIR)/, parti_comp.o parti_comp_wrap.o Arret.o part_equ.o lexique.o segment.o $(MATRICEO) $(ELO) posopere.o part_equ_iter.o)
 	$(faitmodule)
 
-_Cparti_simpmodule.so: $(addprefix $(SRCDIR)/,parti_simp.o parti_simp_wrap.o partition.o $(ELO) segment.o part_equ_iter.o parti_comp.o Arret.o part_equ.o lexique.o posopere.o $(MATRICEO))
+_Cparti_simp.so: $(addprefix $(SRCDIR)/,parti_simp.o parti_simp_wrap.o partition.o $(ELO) segment.o part_equ_iter.o parti_comp.o Arret.o part_equ.o lexique.o posopere.o $(MATRICEO))
 	$(faitmodule)
 
