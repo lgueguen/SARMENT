@@ -3,7 +3,7 @@ Partitionning libraries in python (from C++ through SWIG)
 
 ## Usage
 
-Callable packages are in main directory SARMENT, and some off them
+Callable packages are in main directory SARMENT, and some of them
 call SWIG made packages in Modules (built at compilation), that call
 dynamic libraries .so in Modules.
 
@@ -17,7 +17,7 @@ SARMENT.
 
 "make clean"  to clean binaries.
 
-"make clean_all" to clean binaries & SWIG made files.
+"make clean_all" to clean binaries & SWIG made files (.cxx).
 
 ### Organization
 
