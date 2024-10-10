@@ -603,7 +603,7 @@ ostream& Cpartition::operator<<(ostream& s) const
   _seq[_lg-1].operator<<(s);
   s << " ---> ";
   char tmp[20];
-  sprintf(tmp,"%.12g",_val);
+  snprintf(tmp,20,"%.12g",_val);
   s << tmp << '\0';
   return s;
 }

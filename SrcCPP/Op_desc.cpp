@@ -83,7 +83,7 @@ ostream& Op_feuille::operator<<(ostream& s) const
   char tmp[20];
   if (_val!=1.0){
     s << '(';
-    sprintf(tmp,"%.12g",_val);
+    snprintf(tmp,20,"%.12g",_val);
     s << tmp;
     s << ')';
   }

@@ -111,7 +111,7 @@ ostream& Fsequence::operator<<(ostream& s) const
   int i=0;
   char tmp[20];
 
-  sprintf(tmp,"%d",taille());
+  snprintf(tmp,30,"%d",taille());
   s << tmp << '\n';
 
   while (p++!=_fin){

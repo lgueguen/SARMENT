@@ -1170,10 +1170,10 @@ ostream& Parti_comp::operator<<(ostream& s) const
     x->synt(s);
   s << "MAX";
   if (_npmax>0){
-    sprintf(tmp,"(%d)",_npmax);
+    snprintf(tmp,30,"(%d)",_npmax);
     s << tmp;
   }
-  sprintf(tmp," ---> %.12g\n", _vmax);
+  snprintf(tmp,30," ---> %.12g\n", _vmax);
   s << tmp;
   return(s);
 }

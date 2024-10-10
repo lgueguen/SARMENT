@@ -114,12 +114,12 @@ void Cmotif::ecrit_num(ostream& s) const
   const Cmotif* d=su();
   char tmp[9];
 
-  sprintf(tmp,"%d",num());
+  snprintf(tmp,9,"%d",num());
   s << tmp;
     
   while (d!=this){
     s << ',';
-    sprintf(tmp,"%d",d->num());
+    snprintf(tmp,9,"%d",d->num());
     s << tmp;
     d=d->su();
   }

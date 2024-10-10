@@ -238,11 +238,11 @@ ostream& Cparti_simp::operator<<(ostream& s) const
 
   s << "MAX";
   if (_npmax>0){
-    sprintf(tmp,"%d",_npmax);
+    snprintf(tmp,20,"%d",_npmax);
     s << '(' << tmp << ')';
     }
   s << " ---> ";
-  sprintf(tmp,"%.8f",_vmax);
+  snprintf(tmp,20,"%.8f",_vmax);
   s << tmp << endl;
 
   return s;

@@ -114,7 +114,7 @@ ostream& Fmatrice::operator<<(ostream& s) const
   if (!_seq || _l_desc.est_vide())
     return s;
 
-  sprintf(tmp,"%d\n",taille());
+  snprintf(tmp,30,"%d\n",taille());
   s << tmp;
   
   s.setf(iostream::left);
@@ -127,7 +127,7 @@ ostream& Fmatrice::operator<<(ostream& s) const
   
   do {
     for (j = 0;j<_nval;j++){
-      sprintf(tmp,"%.12g\t", ((*p)[j]));
+      snprintf(tmp,30,"%.12g\t", ((*p)[j]));
       s << tmp;
     }
     s << endl;

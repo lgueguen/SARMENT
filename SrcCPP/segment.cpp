@@ -913,15 +913,15 @@ ostream& Csegment::operator<<(ostream& s) const
 {
   s << "<";
   char  c[40];
-  sprintf(c,"%d",_pos_d.pos()-1);
+  snprintf(c,40,"%d",_pos_d.pos()-1);
   s << c;
   s << "-";
-  sprintf(c,"%d",_pos_f.pos()-1);
+  snprintf(c,40,"%d",_pos_f.pos()-1);
   s << c;
   s << ">";
   ecrit_num(s);
   s << ":";
-  sprintf(c,"%.12g",_val);
+  snprintf(c,40,"%.12g",_val);
   s << c;
   s << ":";
   convertit(s);
@@ -948,13 +948,13 @@ ostream& Csegment::ecrit_num(ostream& s) const
     char tmp[9];
     
     if ((d=iter(_dsc_deb))){
-      sprintf(tmp,"%d",d->num());
+      snprintf(tmp,9,"%d",d->num());
       s << tmp;
     }
     
     while ((d=iter(_dsc_deb))){
       s << ',';
-      sprintf(tmp,"%d",d->num());
+      snprintf(tmp,9,"%d",d->num());
       s << tmp;
     }
   }

@@ -1304,13 +1304,13 @@ void Clexique::ls_num(ostream& s) const
   s << '[';
   
   if ((x=iter())){
-    sprintf(tmp,"%d",x->num());
+    snprintf(tmp,30,"%d",x->num());
     s << tmp;
   }
   
   while ((x=iter())){
     s << ',';
-    sprintf(tmp,"%d",x->num());
+    snprintf(tmp,30,"%d",x->num());
     s << tmp;
   }
 
@@ -1361,7 +1361,7 @@ void Clexique::ecrit_evalue(const Fsequence& G, ostream& s, int d, int f) const
     s << "(";
     pd->ecrit_num(s);
     s << "):";
-    sprintf(c,"%.12g",pm->val());
+    snprintf(c,40,"%.12g",pm->val());
     s << c;
   }
   
@@ -1370,7 +1370,7 @@ void Clexique::ecrit_evalue(const Fsequence& G, ostream& s, int d, int f) const
     s << ",(";
     pd->ecrit_num(s);
     s << "):";
-    sprintf(c,"%.12g",pm->val());
+    snprintf(c,40,"%.12g",pm->val());
     s << c ;
   }
 
@@ -1421,7 +1421,7 @@ void Clexique::ecrit_evalue(const Fmatrice& G, ostream& s, int d, int f) const
     s << "(";
     pd->ecrit_num(s);
     s << "):";
-    sprintf(c,"%.12g",pm->val());
+    snprintf(c,40,"%.12g",pm->val());
     s << c;
   }
   
@@ -1430,7 +1430,7 @@ void Clexique::ecrit_evalue(const Fmatrice& G, ostream& s, int d, int f) const
     s << ",(";
     pd->ecrit_num(s);
     s << "):";
-    sprintf(c,"%.12g",pm->val());
+    snprintf(c,40,"%.12g",pm->val());
     s << c;
   }
 

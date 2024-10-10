@@ -417,7 +417,7 @@ ostream& Part_equ::operator<<(ostream& s) const
 
   _seq[_lg-1].operator<<(s);
 
-  sprintf(tmp,"----> %.12g",val());
+  snprintf(tmp,30,"----> %.12g",val());
   s << tmp << endl;
   return s;
 }
@@ -434,7 +434,7 @@ ostream& Part_equ::synt(ostream& s) const
 
   _seq[_lg-1].synt(s);
 
-  sprintf(tmp,"----> %.12g",val());
+  snprintf(tmp,30,"----> %.12g",val());
   s << tmp << endl;
   return s;
 }

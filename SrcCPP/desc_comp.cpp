@@ -243,11 +243,11 @@ ostream& Cdesc_comp::tab(ostream& s) const
   int i;
   char tmp[30];
   for (i=0;i<t_prec;i++){
-    sprintf(tmp,"%d",_prec[i].num());
+    snprintf(tmp,30,"%d",_prec[i].num());
     s << tmp << ",";
-    sprintf(tmp,"%d",num());
+    snprintf(tmp,30,"%d",num());
     s << tmp << "\t";
-    sprintf(tmp,"%.12g",_prec[i].tx());
+    snprintf(tmp,30,"%.12g",_prec[i].tx());
     s << tmp << "\n";
   }
     return s;
