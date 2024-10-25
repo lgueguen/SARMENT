@@ -25,8 +25,9 @@ OPS = -g
 
 INC = $(shell \
 	if [ `uname` = Darwin ]; then echo '/System/Library/Frameworks/Python.framework/Headers'; \
-	elif [ -x /usr/include/python3.10 ] ; then echo '/usr/include/python3.10'; \
+	elif [ -x /usr/include/python3.12 ] ; then echo '/usr/include/python3.12'; \
 	elif [ -x /usr/include/python3.11 ] ; then echo '/usr/include/python3.11'; \
+	elif [ -x /usr/include/python3.10 ] ; then echo '/usr/include/python3.10'; \
 	elif [ -x /usr/include/python3.9 ] ; then echo '/usr/include/python3.9'; \
 	fi)
 
