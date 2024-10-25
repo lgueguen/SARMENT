@@ -67,7 +67,7 @@ VPATH = .:$(SRCDIR)
 
 Pythondev:
 ifneq ($(INC), )
-	ln -s $(INC) Pythondev
+	ln -s -f $(INC) Pythondev
 else
 	@echo 
 	@echo "**********************************"
