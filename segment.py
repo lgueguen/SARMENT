@@ -40,7 +40,7 @@ val -- (prediction) value is val (default:0).
         
     def read_str(self, st):
         "Build from string st. Return True iff ok."
-        pat='\s*<(?P<deb>\d+)-(?P<fin>\d+)>(?P<num>[0-9,]*):(?P<val>[-+\.e\d]*):(?P<mot>\S*)\s*'
+        pat=r'\s*<(?P<deb>\d+)-(?P<fin>\d+)>(?P<num>[0-9,]*):(?P<val>[-+\.e\d]*):(?P<mot>\S*)\s*'
         r=re.compile(pat)
         g=r.match(st)
         if g:

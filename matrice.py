@@ -302,7 +302,7 @@ otherwise compute the sum.
 
     def integrate(self,g):
         """Build computing the cumulated sums on data g, ie:
-res[i]=\sum_{k=0}^i g[k].
+res[i]=\\sum_{k=0}^i g[k].
 """
         if isinstance(g, sequence._Seq):
             self._Matr__c_elem().integre(g._Seq__c_elem())

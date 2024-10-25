@@ -56,7 +56,7 @@ name, it gets its index in the list as name.
             while s:
                 s.strip()
                 if (s.find("MAX",0,3)==0):
-                    pat='MAX\((?P<nm>\d*)\)\s*--->\s*(?P<val>-?\d+\.?\d*)'
+                    pat=r'MAX\((?P<nm>\d*)\)\s*--->\s*(?P<val>-?\d+\.?\d*)'
                     r=re.compile(pat)
                     g=r.match(s)
                     if g:
